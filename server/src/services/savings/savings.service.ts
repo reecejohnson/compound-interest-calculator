@@ -1,7 +1,7 @@
 import { Service } from 'typedi'
 import CalculateService from '../calculate/calculate.service'
 
-export interface CalculateSavingsByMonthRequest {
+export interface CalculateSavingsByMonth {
     initialAmount: number
     monthlyDeposits: number
     interestRate: number
@@ -28,7 +28,7 @@ export default class SavingsService {
         interestPaymentPeriod,
         monthlyDeposits,
         interestRate,
-    }: CalculateSavingsByMonthRequest): SavingsByMonth[] {
+    }: CalculateSavingsByMonth): SavingsByMonth[] {
         const savingsByMonth = []
         let amount = initialAmount
         const interestRatePerPaymentPeriod = interestRate * (interestPaymentPeriod / 12)

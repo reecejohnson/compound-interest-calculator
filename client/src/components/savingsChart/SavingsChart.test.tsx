@@ -1,27 +1,25 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import SavingsChart from './SavingsChart'
-import { CalculateResponse, useCalculateService } from '../../hooks/useCalculateService'
+import { SavingsByMonth, useSavingsService } from '../../hooks/useSavingsService'
 import { ServiceResponse, ServiceResponseStatus } from '../../types/serviceResponse'
 
-jest.mock('../../hooks/useCalculateService', () => ({
-    useCalculateService: jest.fn(),
+jest.mock('../../hooks/useSavingsService', () => ({
+    useSavingsService: jest.fn(),
 }))
 
 describe('SavingsChart', () => {
-    const useCalculateServiceMock = useCalculateService as jest.Mock<
-        ServiceResponse<CalculateResponse>
-    >
+    const useSavingsServiceMock = useSavingsService as jest.Mock<ServiceResponse<SavingsByMonth[]>>
 
     test('should render loading as service hook is loading', () => {
-        useCalculateServiceMock.mockImplementation(() => ({
+        useSavingsServiceMock.mockImplementation(() => ({
             status: ServiceResponseStatus.LOADING,
         }))
         const { getByText } = render(<SavingsChart />)
         expect(getByText('Loading...')).toBeInTheDocument()
     })
     test('should render error message when service hook returns error', () => {
-        useCalculateServiceMock.mockImplementation(() => ({
+        useSavingsServiceMock.mockImplementation(() => ({
             status: ServiceResponseStatus.ERROR,
             error: new Error(),
         }))
@@ -29,11 +27,11 @@ describe('SavingsChart', () => {
         expect(getByText('Error creating chart.')).toBeInTheDocument()
     })
     test('should render chart when service call succeeds', () => {
-        useCalculateServiceMock.mockImplementation(() => ({
+        useSavingsServiceMock.mockImplementation(() => ({
             status: ServiceResponseStatus.LOADED,
-            payload: { result: 832 },
+            payload: [{ month: 1, savings: 100 }],
         }))
         const { getByText } = render(<SavingsChart />)
-        expect(getByText('Calculation: 832')).toBeInTheDocument()
+        expect(getByText('Calculation: 100')).toBeInTheDocument()
     })
 })

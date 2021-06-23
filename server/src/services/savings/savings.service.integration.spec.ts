@@ -1,4 +1,4 @@
-import SavingsService, { CalculateSavingsByMonthRequest } from './savings.service'
+import SavingsService, { CalculateSavingsByMonth } from './savings.service'
 import CalculateService from '../calculate/calculate.service'
 
 describe('Savings service', () => {
@@ -11,7 +11,7 @@ describe('Savings service', () => {
     })
 
     test('calculate savings for 1 month', () => {
-        const calculateSavingsByMonthRequest: CalculateSavingsByMonthRequest = {
+        const calculateSavingsByMonthRequest: CalculateSavingsByMonth = {
             initialAmount: 1000,
             monthlyDeposits: 100,
             interestRate: 10,
@@ -27,7 +27,7 @@ describe('Savings service', () => {
     })
 
     test('calculate savings for 3 months', () => {
-        const calculateSavingsByMonthRequest: CalculateSavingsByMonthRequest = {
+        const calculateSavingsByMonthRequest: CalculateSavingsByMonth = {
             initialAmount: 200,
             monthlyDeposits: 20,
             interestRate: 5,
@@ -47,7 +47,7 @@ describe('Savings service', () => {
     })
 
     test('calculate savings for 12 months', () => {
-        const calculateSavingsByMonthRequest: CalculateSavingsByMonthRequest = {
+        const calculateSavingsByMonthRequest: CalculateSavingsByMonth = {
             initialAmount: 1000,
             monthlyDeposits: 110,
             interestRate: 5,

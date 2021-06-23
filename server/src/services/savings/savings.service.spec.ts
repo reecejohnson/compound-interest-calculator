@@ -1,11 +1,11 @@
-import SavingsService, { CalculateSavingsByMonthRequest } from './savings.service'
+import SavingsService, { CalculateSavingsByMonth } from './savings.service'
 import CalculateService from '../calculate/calculate.service'
 
 describe('Savings service', () => {
     let savingsService: SavingsService
     let calculateService: CalculateService
 
-    beforeAll(() => {
+    beforeEach(() => {
         calculateService = new CalculateService()
         calculateService.calculateSavingsIncreaseAfterInterest = jest.fn()
         calculateService.calculateSavingsIncrease = jest.fn()
@@ -17,7 +17,7 @@ describe('Savings service', () => {
     test('calculate savings for 1 month with interest', () => {
         calculateService.isInterestPayable = jest.fn().mockImplementation(() => true)
 
-        const calculateSavingsByMonthRequest: CalculateSavingsByMonthRequest = {
+        const calculateSavingsByMonthRequest: CalculateSavingsByMonth = {
             initialAmount: 1000,
             monthlyDeposits: 100,
             interestRate: 10,
@@ -46,7 +46,7 @@ describe('Savings service', () => {
     test('calculate savings for 1 no interest', () => {
         calculateService.isInterestPayable = jest.fn().mockImplementation(() => false)
 
-        const calculateSavingsByMonthRequest: CalculateSavingsByMonthRequest = {
+        const calculateSavingsByMonthRequest: CalculateSavingsByMonth = {
             initialAmount: 1000,
             monthlyDeposits: 100,
             interestRate: 10,
@@ -68,7 +68,7 @@ describe('Savings service', () => {
     test('calculate savings for 12 months', () => {
         calculateService.isInterestPayable = jest.fn().mockImplementation(() => true)
 
-        const calculateSavingsByMonthRequest: CalculateSavingsByMonthRequest = {
+        const calculateSavingsByMonthRequest: CalculateSavingsByMonth = {
             initialAmount: 1000,
             monthlyDeposits: 100,
             interestRate: 10,
