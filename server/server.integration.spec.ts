@@ -14,7 +14,7 @@ describe('Calculate API', () => {
         await request(app.getServer())
             .get('/calculate')
             .expect('Content-Type', /json/)
-            .expect({ result: 103 })
+            .expect({ result: 1 })
             .expect(200)
     })
 })

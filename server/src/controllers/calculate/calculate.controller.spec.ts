@@ -7,15 +7,23 @@ describe('Calculate Controller', () => {
 
     beforeAll(() => {
         calculateServiceMock = new CalculateService()
-        calculateServiceMock.calculate = jest
-            .fn(calculateServiceMock.calculate)
-            .mockImplementation(() => 999)
+        calculateServiceMock.calculateInterest = jest.fn()
+        calculateServiceMock.calculateSavingsIncreaseAfterInterest = jest.fn()
         calculateController = new CalculateController(calculateServiceMock)
     })
 
-    test('should return calculation result', () => {
-        let response = calculateController.get()
-        expect(calculateServiceMock.calculate).toHaveBeenCalled()
+    afterEach(() => {
+        jest.resetAllMocks()
+    })
+
+    test('should return interest calculation result', () => {
+        calculateServiceMock.calculateInterest = jest
+            .fn(calculateServiceMock.calculateInterest)
+            .mockImplementation(() => 999)
+
+        const response = calculateController.get()
+
+        expect(calculateServiceMock.calculateInterest).toHaveBeenCalled()
         expect(response).toEqual({ result: 999 })
     })
 })

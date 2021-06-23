@@ -13,7 +13,7 @@ export class CalculateController {
 
     @Get('/')
     get() {
-        const result = this.calculateService.calculate()
+        const result = this.calculateService.calculateInterest(100, 1)
         return {
             result,
         }
