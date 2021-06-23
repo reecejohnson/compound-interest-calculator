@@ -1,4 +1,4 @@
-# Compound Interest Calculator - React & Node 💸 
+# Compound Interest Calculator - React & Node 💸
 
 ## Running the application
 
@@ -9,9 +9,8 @@ To run the app in development mode with hot-reloading of client and server: `yar
 Depending on your environment, you might need to install concurrently / Typescript globally.
 
 ## Running the tests
-- Client and Server: `yarn test`
-- Client (watch mode): `yarn client:test`
-- Sever (one time run): `yarn server:test`
-- Sever (watch mode): `yarn server:test:watch`
 
-
+-   Client and Server: `yarn test`
+-   Client (watch mode): `yarn client:test`
+-   Sever (one time run): `yarn server:test`
+-   Sever (watch mode): `yarn server:test:watch`

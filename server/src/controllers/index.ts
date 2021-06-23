@@ -1,3 +1,3 @@
-import { CalculateController } from './calculate/calculate.controller'
+import { CalculateController } from './calculate/calculate.controller';
 
-export default [CalculateController]
+export default [CalculateController];

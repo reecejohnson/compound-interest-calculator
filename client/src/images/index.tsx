@@ -1,7 +1,7 @@
-import fullBrandLogo from '../static/images/logo.png'
+import fullBrandLogo from '../static/images/logo.png';
 
 const images = {
     fullBrandLogo,
-}
+};
 
-export default images
+export default images;

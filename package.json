@@ -1,66 +1,66 @@
 {
-  "name": "fullstack-dev-challenge",
-  "version": "0.0.1",
-  "private": true,
-  "dependencies": {
-    "@types/jest": "^26.0.23",
-    "body-parser": "^1.19.0",
-    "chai": "^4.3.4",
-    "chai-http": "^4.3.0",
-    "class-transformer": "^0.4.0",
-    "class-validator": "^0.13.1",
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "envalid": "^7.1.0",
-    "express": "4.17.1",
-    "jest": "^26.6.0",
-    "nodemon": "^2.0.7",
-    "reflect-metadata": "^0.1.13",
-    "routing-controllers": "^0.9.0",
-    "supertest": "^6.1.3",
-    "ts-jest": "^26.5.5",
-    "typedi": "^0.10.0"
-  },
-  "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "yarn run server:test && yarn run client:test",
-    "dev": "concurrently \"npm run server:dev\" \"npm run client\"",
-    "server": "ts-node server/server.ts",
-    "server:test": "jest",
-    "server:dev": "node_modules/.bin/nodemon --watch \"./server/**/*.ts\" --exec ts-node ./server/server.ts",
-    "server:test:watch": "jest --watch",
-    "types": "tsc",
-    "client": "node scripts/start-client.js",
-    "client:test": "node scripts/test-client.js",
-    "install": "cd client && yarn install && cd .."
-  },
-  "devDependencies": {
-    "@types/cors": "^2.8.9",
-    "@types/express": "^4.17.9",
-    "@types/mocha": "^8.2.2",
-    "@types/node": "^14.14.14",
-    "@types/supertest": "^2.0.11",
-    "concurrently": "5.3.0",
-    "mocha": "^8.2.1",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.1.3"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "transform": {
-      "^.+\\.(ts|tsx)$": "ts-jest"
+    "name": "fullstack-dev-challenge",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "@types/jest": "^26.0.23",
+        "body-parser": "^1.19.0",
+        "chai": "^4.3.4",
+        "chai-http": "^4.3.0",
+        "class-transformer": "^0.4.0",
+        "class-validator": "^0.13.1",
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
+        "envalid": "^7.1.0",
+        "express": "4.17.1",
+        "jest": "^26.6.0",
+        "nodemon": "^2.0.7",
+        "reflect-metadata": "^0.1.13",
+        "routing-controllers": "^0.9.0",
+        "supertest": "^6.1.3",
+        "ts-jest": "^26.5.5",
+        "typedi": "^0.10.0"
     },
-    "globals": {
-      "ts-jest": {
-        "tsConfigFile": "tsconfig.json"
-      }
+    "scripts": {
+        "start": "concurrently \"npm run server\" \"npm run client\"",
+        "test": "yarn run server:test && yarn run client:test",
+        "dev": "concurrently \"npm run server:dev\" \"npm run client\"",
+        "server": "ts-node server/server.ts",
+        "server:test": "jest",
+        "server:dev": "node_modules/.bin/nodemon --watch \"./server/**/*.ts\" --exec ts-node ./server/server.ts",
+        "server:test:watch": "jest --watch",
+        "types": "tsc",
+        "client": "node scripts/start-client.js",
+        "client:test": "node scripts/test-client.js",
+        "install": "cd client && yarn install && cd .."
     },
-    "testMatch": [
-      "**/server/**/*.spec.ts"
-    ]
-  }
+    "devDependencies": {
+        "@types/cors": "^2.8.9",
+        "@types/express": "^4.17.9",
+        "@types/mocha": "^8.2.2",
+        "@types/node": "^14.14.14",
+        "@types/supertest": "^2.0.11",
+        "concurrently": "5.3.0",
+        "mocha": "^8.2.1",
+        "ts-node": "^9.1.1",
+        "typescript": "^4.1.3"
+    },
+    "jest": {
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js"
+        ],
+        "transform": {
+            "^.+\\.(ts|tsx)$": "ts-jest"
+        },
+        "globals": {
+            "ts-jest": {
+                "tsConfigFile": "tsconfig.json"
+            }
+        },
+        "testMatch": [
+            "**/server/**/*.spec.ts"
+        ]
+    }
 }

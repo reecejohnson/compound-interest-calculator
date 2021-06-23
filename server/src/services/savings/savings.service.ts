@@ -1,25 +1,25 @@
-import { Service } from 'typedi'
-import CalculateService from '../calculate/calculate.service'
+import { Service } from 'typedi';
+import CalculateService from '../calculate/calculate.service';
 
 export interface CalculateSavingsByMonth {
-    initialAmount: number
-    monthlyDeposits: number
-    interestRate: number
-    interestPaymentPeriod: number
-    totalMonthsOfSaving: number
+    initialAmount: number;
+    monthlyDeposits: number;
+    interestRate: number;
+    interestPaymentPeriod: number;
+    totalMonthsOfSaving: number;
 }
 
 interface SavingsByMonth {
-    month: number
-    savings: number
+    month: number;
+    savings: number;
 }
 
 @Service()
 export default class SavingsService {
-    private calculateService: CalculateService
+    private calculateService: CalculateService;
 
     constructor(calculateService: CalculateService) {
-        this.calculateService = calculateService
+        this.calculateService = calculateService;
     }
 
     public calculateSavingsByMonth({
@@ -29,9 +29,9 @@ export default class SavingsService {
         monthlyDeposits,
         interestRate,
     }: CalculateSavingsByMonth): SavingsByMonth[] {
-        const savingsByMonth = []
-        let amount = initialAmount
-        const interestRatePerPaymentPeriod = interestRate * (interestPaymentPeriod / 12)
+        const savingsByMonth = [];
+        let amount = initialAmount;
+        const interestRatePerPaymentPeriod = interestRate * (interestPaymentPeriod / 12);
 
         for (let month = 1; month <= totalMonthsOfSaving; month++) {
             amount = this.getIncreasedAmountDependantOnInterest(
@@ -40,15 +40,15 @@ export default class SavingsService {
                 amount,
                 monthlyDeposits,
                 interestRatePerPaymentPeriod
-            )
+            );
 
             savingsByMonth.push({
                 month,
                 savings: amount,
-            })
+            });
         }
 
-        return savingsByMonth
+        return savingsByMonth;
     }
 
     private getIncreasedAmountDependantOnInterest(
@@ -61,16 +61,16 @@ export default class SavingsService {
         const isInterestPayable = this.calculateService.isInterestPayable(
             month,
             interestPaymentPeriod
-        )
+        );
 
         if (!isInterestPayable) {
-            return this.calculateService.calculateSavingsIncrease(amount, monthlyDeposits)
+            return this.calculateService.calculateSavingsIncrease(amount, monthlyDeposits);
         }
 
         return this.calculateService.calculateSavingsIncreaseAfterInterest(
             amount,
             monthlyDeposits,
             interestRatePerPaymentPeriod
-        )
+        );
     }
 }

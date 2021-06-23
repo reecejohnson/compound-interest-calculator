@@ -1,8 +1,8 @@
-import App from './src/app'
-import validateEnv from './src/utlis/validateEnv'
+import App from './src/app';
+import validateEnv from './src/utlis/validateEnv';
 
-validateEnv()
+validateEnv();
 
-const app = new App()
+const app = new App();
 
-app.start()
+app.start();

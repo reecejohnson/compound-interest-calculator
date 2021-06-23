@@ -1,11 +1,11 @@
-import React from 'react'
-import './App.css'
-import { ChakraProvider, Container, extendTheme } from '@chakra-ui/react'
-import DefaultLayout from './components/layouts/Default'
-import theme from './theme'
-import SavingsChart from './components/savingsChart/SavingsChart'
+import React from 'react';
+import './App.css';
+import { ChakraProvider, Container, extendTheme } from '@chakra-ui/react';
+import DefaultLayout from './components/layouts/Default';
+import theme from './theme';
+import SavingsChart from './components/savingsChart/SavingsChart';
 
-const defaultTheme = extendTheme(theme)
+const defaultTheme = extendTheme(theme);
 
 function App() {
     return (
@@ -16,7 +16,7 @@ function App() {
                 </Container>
             </DefaultLayout>
         </ChakraProvider>
-    )
+    );
 }
 
-export default App
+export default App;

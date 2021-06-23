@@ -1,20 +1,20 @@
-import { ChartLegendOptions, ChartOptions } from 'chart.js'
-import React from 'react'
-import { Line } from 'react-chartjs-2'
-import theme from '../theme'
+import { ChartLegendOptions, ChartOptions } from 'chart.js';
+import React from 'react';
+import { Line } from 'react-chartjs-2';
+import theme from '../theme';
 
 type Props = {
-    xAxisData: number[] | string[]
-    yAxisData: number[]
-    title?: string
-    xLabel?: string
-    yLabel?: string
-}
+    xAxisData: number[] | string[];
+    yAxisData: number[];
+    title?: string;
+    xLabel?: string;
+    yLabel?: string;
+};
 
 const LineChart = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
     const legendOptions: ChartLegendOptions = {
         display: false,
-    }
+    };
 
     const options: ChartOptions = {
         title: {
@@ -37,7 +37,7 @@ const LineChart = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
                 },
             ],
         },
-    }
+    };
 
     return (
         <Line
@@ -54,7 +54,7 @@ const LineChart = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
             options={options}
             legend={legendOptions}
         />
-    )
-}
+    );
+};
 
-export default LineChart
+export default LineChart;

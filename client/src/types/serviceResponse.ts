@@ -4,17 +4,17 @@ export enum ServiceResponseStatus {
     LOADED,
 }
 interface ServiceResponseLoading {
-    status: ServiceResponseStatus.LOADING
+    status: ServiceResponseStatus.LOADING;
 }
 interface ServiceResponseLoaded<T> {
-    status: ServiceResponseStatus.LOADED
-    payload: T
+    status: ServiceResponseStatus.LOADED;
+    payload: T;
 }
 interface ServiceResponseError {
-    status: ServiceResponseStatus.ERROR
-    error: Error
+    status: ServiceResponseStatus.ERROR;
+    error: Error;
 }
 export type ServiceResponse<T> =
     | ServiceResponseLoading
     | ServiceResponseLoaded<T>
-    | ServiceResponseError
+    | ServiceResponseError;

@@ -6,6 +6,6 @@ export async function post<T>(url: string, body: any): Promise<T> {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(body),
-    })
-    return await response.json()
+    });
+    return await response.json();
 }

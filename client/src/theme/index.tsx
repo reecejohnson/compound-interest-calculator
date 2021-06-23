@@ -78,6 +78,6 @@ const theme = {
         80: '20rem',
         96: '24rem',
     },
-}
+};
 
-export default theme
+export default theme;
