@@ -11,15 +11,16 @@ export default class CalculateService {
         monthlySavings: number,
         interestRate: number
     ) {
-        const totalBeforeInterest = CalculateService.calculateSavingsIncrease(
-            currentAmount,
-            monthlySavings
-        )
+        const totalBeforeInterest = this.calculateSavingsIncrease(currentAmount, monthlySavings)
         const interest = this.calculateInterest(totalBeforeInterest, interestRate)
         return totalBeforeInterest + interest
     }
 
-    private static calculateSavingsIncrease(currentAmount: number, monthlySavings: number) {
+    public isInterestPayable(month: number, paymentPeriod: number) {
+        return month % paymentPeriod === 0
+    }
+
+    public calculateSavingsIncrease(currentAmount: number, monthlySavings: number) {
         return currentAmount + monthlySavings
     }
 }

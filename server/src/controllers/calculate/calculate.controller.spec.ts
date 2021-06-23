@@ -1,5 +1,5 @@
 import { CalculateController } from './calculate.controller'
-import CalculateService from '../../services/calculate.service'
+import CalculateService from '../../services/calculate/calculate.service'
 
 describe('Calculate Controller', () => {
     let calculateController: CalculateController

@@ -51,4 +51,20 @@ describe('Calculate service', () => {
             }
         )
     })
+
+    describe('is interest payable', () => {
+        const cases = [
+            [true, 10, 2],
+            [false, 8, 12],
+            [true, 2, 2],
+        ]
+
+        test.each(cases)(
+            'should return %p when month is %i and payment period is %i',
+            (expected: any, month: any, paymentPeriod: any) => {
+                const result = calculateService.isInterestPayable(month, paymentPeriod)
+                expect(result).toEqual(expected)
+            }
+        )
+    })
 })

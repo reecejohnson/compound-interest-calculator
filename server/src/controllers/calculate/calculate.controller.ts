@@ -1,5 +1,5 @@
 import { Controller, Get } from 'routing-controllers'
-import CalculateService from '../../services/calculate.service'
+import CalculateService from '../../services/calculate/calculate.service'
 import { Service } from 'typedi'
 
 @Service()
