@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import { ChakraProvider, Container, extendTheme } from '@chakra-ui/react';
-import DefaultLayout from './components/layouts/Default';
-import theme from './theme';
-import SavingsChart from './components/savingsChart/SavingsChart';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import DefaultLayout from '../components/layouts/Default';
+import theme from '../theme';
+import SavingsChartContainer from '../components/savingsChart/SavingsChartContainer';
 
 const defaultTheme = extendTheme(theme);
 
@@ -11,9 +11,7 @@ function App() {
     return (
         <ChakraProvider theme={defaultTheme}>
             <DefaultLayout>
-                <Container pt={6}>
-                    <SavingsChart />
-                </Container>
+                <SavingsChartContainer />
             </DefaultLayout>
         </ChakraProvider>
     );

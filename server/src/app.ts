@@ -1,11 +1,11 @@
 import express, { Application, NextFunction, Request, Response } from 'express';
 import 'reflect-metadata';
-import { useContainer, useExpressServer } from 'routing-controllers';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
-import controllers from './controllers';
 import { Container } from 'typedi';
+import { useContainer, useExpressServer } from 'routing-controllers';
+import controllers from './controllers';
 
 dotenv.config();
 
@@ -21,7 +21,7 @@ export default class App {
     }
 
     public start() {
-        this.app.listen(this.app.get('port'), () => {
+        return this.app.listen(this.app.get('port'), () => {
             console.log(`Find the server at: http://localhost:${this.app.get('port')}/`); // eslint-disable-line no-console
         });
     }

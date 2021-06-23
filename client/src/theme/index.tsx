@@ -6,7 +6,7 @@ const theme = {
         text: '#3C4857',
         primary: '#3BA9FC',
         primaryInverted: '#fff',
-        danger: '#FD2F60',
+        danger: '#E53E3E',
         dangerInverted: '#fff',
         warning: '#ffbb2d',
         warningInverted: '#171e27',
@@ -23,7 +23,7 @@ const theme = {
         blue300: '#D8EEFE',
         blue400: '#9DD4FD',
         blue500: '#3BA9FC',
-        blue600: '#2B7BB8',
+        blue600: '#2F84C0',
         blue700: '#275789',
         blue800: '#102440',
         blue900: '#040D14',
@@ -35,6 +35,10 @@ const theme = {
         md: '16px',
         lg: '18px',
         xl: '20px',
+    },
+    fonts: {
+        heading: 'Roboto',
+        body: 'Roboto',
     },
     fontWeights: {
         normal: 400,

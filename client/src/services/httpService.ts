@@ -1,4 +1,9 @@
-export async function post<T>(url: string, body: any): Promise<T> {
+export interface PostResponse<T> {
+    status: number;
+    body: T;
+}
+
+export async function post<T>(url: string, body: any): Promise<PostResponse<T>> {
     const response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -7,5 +12,6 @@ export async function post<T>(url: string, body: any): Promise<T> {
         },
         body: JSON.stringify(body),
     });
-    return await response.json();
+    const responseBody = await response.json();
+    return { status: response.status, body: responseBody };
 }
