@@ -32,7 +32,7 @@ const SavingsChartContainer = () => {
     }
 
     return (
-        <Flex alignItems="center" bg="blue600" h="100vh">
+        <Flex alignItems="center" bg="grey2" h="100vh">
             <Container maxW="container.xl" mt={{ base: '10px', md: '-62px' }}>
                 <Box bg="white" p={12} borderRadius="lg" boxShadow="lg">
                     <Text fontSize="3xl">Compound Interest Calculator 💸</Text>

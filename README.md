@@ -1,4 +1,14 @@
 # Compound Interest Calculator - React & Node 💸
+An application to calculate compound interest given various parameters. 
+Built with:
+- TypeScript
+- React
+- Node
+- CharkaUI
+- React Testing Library
+- Jest
+
+![Screenshot](client/src/static/images/screenshot.png)
 
 ## Running the application
 
